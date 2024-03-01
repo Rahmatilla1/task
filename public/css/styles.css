@@ -1,0 +1,88 @@
+
+body {
+    color: blue;
+}
+
+.home {
+    background-repeat: no-repeat, no-repeat;
+    background-position: left bottom, right bottom;
+    background-size: 200px 350px, 200px 350px;
+}
+
+
+.heading-top {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.heading-top span {
+    color: #f00;
+}
+
+h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ul {
+    list-style-type: none;
+    margin: 0 auto;
+    max-width: 300px;
+    text-align: center;
+    padding: 30px 50px;
+    box-shadow: 0 0 30px 0 rgb(0, 0, 139, 0.664);
+    border-radius: 8px;
+    margin-bottom: 50px;
+}
+
+li {
+    margin-bottom: 20px;
+    display: block;
+}
+
+.company-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.contact {
+    background-color: #fff;
+    padding: 20px 0;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.contact form label {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    gap: 10px;
+}
+
+.contact form input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid lightblue;
+}
+
+.contact form button {
+    background-color: lightblue;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.contact form button:hover {
+    color: white;
+    background-color: rgb(87, 191, 226);
+}

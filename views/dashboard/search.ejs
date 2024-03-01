@@ -1,0 +1,17 @@
+<div class="container mb-4 pb-4 h-100">
+    <h1 class="text-center my-4">Search Results</h1>
+
+    <div class="row">
+        <%if (searchResult !== "" && searchResult.length > 0) { %>
+            <% searchResult.forEach(task => { %>
+                <a class="col my-4 border" href="/dashboard/item/<%= task._id %>">
+                    <h3 class="my-4"><%= task.title %></h3>
+                </a>
+           <% }) %>
+       <% } else{ %>
+        <h2 class="text-danger text-center my-4">Task not found !</h2>
+      <% } %>
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->

@@ -1,0 +1,80 @@
+<div class="container pb-5, mb-5">
+  <div class="row mb-4">
+    <div class="col">
+      <h1>Hello <%= userName %>
+      </h1>
+    </div>
+    <div class="col text-end">
+      <a href="/dashboard/add">
+        <script src="https://cdn.lordicon.com/lordicon.js"></script>
+        <lord-icon src="https://cdn.lordicon.com/zrkkrrpl.json" trigger="hover" style="width:50px;height:50px">
+        </lord-icon>
+        <script src="https://cdn.lordicon.com/lordicon.js"></script>
+      </a>
+      <p style="margin-right: 11px;">Add</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <% if(tasks.length> 0){ tasks.forEach(task => { %>
+      <div class="col-6 col-sm-6 col-md-4 col-lg-3 mb-4">
+        <div class="card border-primary" style="min-height: 210px">
+          <a href="/dashboard/item/<%= task._id  %>" class="card-body text-decoration-none">
+            <h5 class="card-title">
+              <%= task.title %>
+            </h5>
+            <p class="card-text text-truncate">
+              <%= task.body %>
+            </p>
+          </a>
+        </div>
+      </div>
+      <% }) } else { %>
+        <div class="row not-found">
+          <div class="col-6">
+            <img class="task-img" src="/img/boy.jpg" alt="task-image" />
+          </div>
+        </div>
+        <% } if(tasks.length > 0){ %>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <% if(current === 1) { %>
+                <li class="page-item">
+                  <a class="page-link" href="#"> Previous </a>
+                </li>
+                <% } else { %>
+                  <li class="page-item">
+                    <a class="page-link" href="/dashboard">First</a>
+                  </li>
+                  <% } let i=current> 5 ? current - 4 : 1 %> 
+                  <% if(i !==1) { %>
+                      <li class="page-item"><a class="page-link" href="#">...</a></li>
+                      <% } %>
+                        <% for( ; i <= current + 4 && i < pages; i++ ) { %>
+                          <% if(i==current) { %>
+                            <li class="page-item"><a class="page-link" href="#">
+                                <%= i %>
+                              </a></li>
+                            <% } else { %>
+                              <li class="page-item">
+                                <a class="page-link" href="/dashboard/?page=<%= i %>">
+                                  <%= i %>
+                                </a>
+                              </li>
+                              <% } %>
+                                <% if(i ==current + 4 && i < pages) { %>
+                                  <li class="page-item"><a class="page-link" href="#">...</a></li>
+                                  <% } %>
+                                    <% } %>
+                                      <% if(pages == current) { %>
+                                        <li class="page-item"><a class="page-link" href="#">Last</a></li>
+                                        <% } else { %>
+                                          <li class="page-item">
+                                            <a class="page-link" href="/dashboard/?pages=<%= pages %>">Last</a>
+                                          </li>
+                                          <% } %>
+            </ul>
+          </nav>
+          <% } %>
+  </div>
+</div>
