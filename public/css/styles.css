@@ -35,7 +35,7 @@ h3 {
     margin-bottom: 50px;
 }
 
-li {
+.li {
     margin-bottom: 20px;
     display: block;
 }
@@ -66,13 +66,13 @@ li {
     gap: 10px;
 }
 
-.contact form input, textarea, button {
+.contact form input, textarea, .submit {
     width: 100%;
     padding: 10px;
     border: 1px solid lightblue;
 }
 
-.contact form button {
+.contact form .submit {
     background-color: lightblue;
     cursor: pointer;
     text-transform: uppercase;
@@ -82,7 +82,7 @@ li {
     border-radius: 20px;
 }
 
-.contact form button:hover {
+.contact form .submit:hover {
     color: white;
     background-color: rgb(87, 191, 226);
 }
